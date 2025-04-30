@@ -5,11 +5,7 @@ public class SLList {
         first = new IntNode(x, null);
     }
 
-    /** Adds an item to the front of the list. */
-    public void addFirst(int x) {
-        first = new IntNode(x, first);
+    public static void main(String[] args) {
+        SLList L = new SLList(10);
     }
-    public int getFirst(){
-        return first.item;
     }
-}
