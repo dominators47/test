@@ -1,5 +1,5 @@
 public class SLList {
-    private class IntNode {
+    private static class IntNode {
 
         public int item;
         public IntNode next;
@@ -9,7 +9,7 @@ public class SLList {
             next = n;
         }
     }
-    public IntNode first;
+    private IntNode first;
 
     public SLList(int x) {
         first = new IntNode(x, null);
