@@ -9,41 +9,42 @@ public class SLList {
             next = n;
         }
     }
-    private IntNode first;
+    private IntNode sentinel;
     private  int  size;
 
+    public SLList(){
+        sentinel = new IntNode(63, null);
+        size = 0;
+    }
+
     public SLList(int x) {
-        first = new IntNode(x, null);
+        sentinel = new IntNode(63, null);
+        sentinel.next = new IntNode(x, null);
         size = 1;
     }
 
     public void addfirst(int x){
-        first = new IntNode(x , first);
+        sentinel.next = new IntNode(x , sentinel.next);
+        size += 1;
     }
     public int getfirst(){
-        return first.item;
+        return sentinel.next.item;
     }
     public void addlast(int x){
-        IntNode p = first;
+        size += 1;
+        IntNode p = sentinel;
         while(p.next != null){
             p = p.next;
         }
         p.next = new IntNode(x, null);
     }
-    private static int size(IntNode p){
-        if (p.next == null){
-            return 1;
-        }
-        return 1 + size(p.next);
-    }
     public int size(){
-        return size(first);
+        return size;
     }
     public static void main(String[] args) {
-        SLList L = new SLList(15);
-        L.addfirst(10);
-        L.addfirst(5);
+        SLList L = new SLList();
         L.addlast(20);
+        L.addfirst(15);
         System.out.println(L.size());
     }
     }
