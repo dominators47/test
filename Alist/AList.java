@@ -12,6 +12,11 @@ public class AList {
         size = 0;
     }
 
+    private void resize(int capacity){
+        int[] a =
+
+    }
+
     /** Inserts X into the back of the list. */
     public void addLast(int x) {
         items[size] = x;
